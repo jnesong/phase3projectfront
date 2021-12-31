@@ -1,13 +1,108 @@
+/* general styling */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Optima", sans-serif;
+  font-size: 25px;
+  background-color: rgb(213, 243, 245);
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h2
+{
+  font-size: 40px;
+  padding: 30px;
+  font-family: "Andale mono", serif;
 }
+
+p {
+  font-size: 30px;
+}
+
+
+/* #home,
+#about {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 50vh;
+  min-height: 400px;
+  padding: 1rem;
+} */
+
+/* image styling */
+
+img {
+    display: inline;
+    margin: 30px;
+    height: 250px;
+    width: auto;
+
+}
+
+.image-cropper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+/* form styling */
+
+input {
+  width: 20%;
+  padding: 20px;
+  background-color: rgb(213, 243, 245);
+}
+
+input[type=text]{
+  border: none;
+  border-bottom: 2px solid black;
+  font-family: "Andale mono", serif;
+  font-size: 20px;
+  text-align:center
+}
+
+input[type=text]:focus{
+  outline:none ;
+}
+
+#buttonSubmit {
+  text-align: center;
+  font-family: "Andale mono", serif;
+  border: none;
+  background-color:transparent;
+  color: black;
+  padding: 40px;
+  font-size: 20px;
+  display: block;
+  transition-duration: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
+}
+#buttonSubmit:hover {
+  background-color:  rgb(213, 243, 245);
+  color: white;
+}
+
+/* NavBar styling */
+/* 
+nav a {
+  display: inline-block;
+  margin: 30px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Andale mono", serif;
+  color: rgb(205, 218, 245);
+  border-bottom: none;
+}
+
+nav a:hover,
+nav a:active {
+  color: black;
+  border-bottom: none;
+}
+
+nav a.active {
+  color: white;
+} */
