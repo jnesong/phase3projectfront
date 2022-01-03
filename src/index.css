@@ -1,21 +1,37 @@
 /* general styling */
-
 body {
+  background-color: rgb(213, 243, 245);
+}
+
+.home {
   font-family: "Optima", sans-serif;
   font-size: 25px;
   background-color: rgb(213, 243, 245);
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-h2
-{
+
+h1 {
   font-size: 40px;
-  padding: 30px;
+  padding: 250px;
   font-family: "Andale mono", serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 30px;
+  font-family: "Didot", serif;
+  color: rgb(100, 153, 157);
 }
 
 p {
-  font-size: 30px;
+  font-size: 20px;
+  background-image: linear-gradient(to left, rgb(130, 155, 238), rgb(104, 128, 205), rgb(90, 113, 189), rgb(60, 82, 155), rgb(52, 68, 128), rgb(54, 66, 108), rgb(50, 61, 94));   
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 
@@ -35,7 +51,7 @@ p {
 
 img {
     display: inline;
-    margin: 30px;
+    margin: 40px;
     height: 250px;
     width: auto;
 
@@ -44,20 +60,36 @@ img {
 .image-cropper {
   position: relative;
   overflow: hidden;
-  border-radius: 100%;
+  border-radius: 10%;
 }
 
-/* form styling */
+/* Login Form styling */
 
-input {
+.login {
+  font-family: "Optima", sans-serif;
+  font-size: 25px;
+  background-color: white;
+  text-align: center;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.inputlogin {
   width: 20%;
   padding: 20px;
-  background-color: rgb(213, 243, 245);
+  background-color: white;
 }
 
 input[type=text]{
   border: none;
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   font-family: "Andale mono", serif;
   font-size: 20px;
   text-align:center
@@ -65,6 +97,10 @@ input[type=text]{
 
 input[type=text]:focus{
   outline:none ;
+}
+
+::placeholder {
+  color: rgb(100, 153, 157);
 }
 
 #buttonSubmit {
@@ -81,28 +117,79 @@ input[type=text]:focus{
   margin-right: auto;
 }
 #buttonSubmit:hover {
-  background-color:  rgb(213, 243, 245);
+  background-color:white;
+  color: rgb(237, 196, 94);
+}
+
+/* Add Form styling */
+.inputform {
+  width: 30%;
+  padding: 10px;
+  background-color: rgb(213, 243, 245);
+}
+
+.inputlength{
+  width: 10%;
+  padding: 20px;
+  background-color: rgb(213, 243, 245);
+}
+
+label {
+  font-size: 20px;
+  padding: 10px;
+  font-family: "Andale mono", serif;
+  text-align: center;
+}
+
+#buttonSubmit2 {
+  text-align: center;
+  font-family: "Andale mono", serif;
+  border: none;
+  background-color:transparent;
+  color: black;
+  padding: 40px;
+  font-size: 20px;
+  display: block;
+  transition-duration: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
+}
+#buttonSubmit2:hover {
+  background-color:rgb(213, 243, 245);
   color: white;
 }
 
+
+input[type=date], input[type=time]{
+  border: none;
+  /* border-bottom: 2px solid black; */
+  font-family: "Andale mono", serif;
+  font-size: 20px;
+  text-align:center
+}
+
+input[type=date], input[type=time]:focus{
+  outline:none ;
+}
+
 /* NavBar styling */
-/* 
+
 nav a {
   display: inline-block;
   margin: 30px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Andale mono", serif;
-  color: rgb(205, 218, 245);
+  color: rgb(100, 153, 157);
   border-bottom: none;
 }
 
 nav a:hover,
 nav a:active {
-  color: black;
+  color: white;
   border-bottom: none;
 }
 
 nav a.active {
-  color: white;
-} */
+  color: rgb(60, 100, 103);
+}

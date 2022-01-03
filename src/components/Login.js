@@ -1,9 +1,9 @@
-import star from "./star.gif"
 import React, { useState } from "react";
+import star from "./gifs/star.gif"
 
 function Login({holdsUserLogin}) {
 
-    const [username, setUsername] = useState ("enter username")
+    const [username, setUsername] = useState ("")
 
     function handleSubmit (e){
         e.preventDefault()
@@ -12,14 +12,15 @@ function Login({holdsUserLogin}) {
     }
 
     return (
-        <>
+        <div className="login">
             <h2> Mama Data </h2>
-            <img className="image-cropper" src={star} alt="star gif" />
+            <img className="image-cropper" src={star} alt="star gif"/>
             <form onSubmit={handleSubmit}>
                 <div style={{ alignItems: "center" }}>
                     <input
-                        className="input"
+                        className="inputlogin"
                         type="text"
+                        placeholder="enter username"
                         name="username"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
@@ -28,7 +29,7 @@ function Login({holdsUserLogin}) {
                 </div>
 
             </form>
-        </>
+        </div>
     );
 }
 
