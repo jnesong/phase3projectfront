@@ -1,12 +1,12 @@
 /* general styling */
 body {
-  background-color: rgb(213, 243, 245);
+  background-color: rgb(196, 221, 223);
 }
 
 .home {
   font-family: "Optima", sans-serif;
   font-size: 25px;
-  background-color: rgb(213, 243, 245);
+  background-color: rgb(196, 221, 223);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -129,13 +129,13 @@ input[type=text]:focus{
 .inputform {
   width: 30%;
   padding: 10px;
-  background-color: rgb(213, 243, 245);
+  background-color: rgb(196, 221, 223);
 }
 
 .inputlength{
   width: 10%;
   padding: 20px;
-  background-color: rgb(213, 243, 245);
+  background-color: rgb(196, 221, 223);
 }
 
 label {
@@ -159,7 +159,7 @@ label {
   margin-right: auto;
 }
 #buttonSubmit2:hover {
-  background-color:rgb(213, 243, 245);
+  background-color: rgb(196, 221, 223);
   color: white;
 }
 

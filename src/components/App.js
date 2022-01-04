@@ -55,7 +55,10 @@ function App() {
         </Route>
 
         <Route path="/add">
-          <AddSleep />
+          <AddSleep 
+          baseURL={baseURL}
+          babies={babies}
+          />
         </Route>
 
         <Route exact path="/">
