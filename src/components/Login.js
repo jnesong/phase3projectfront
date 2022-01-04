@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import star from "./gifs/star.gif"
+import star from "./gifs/star.gif";
 
 function Login({holdsUserLogin}) {
 
-    const [username, setUsername] = useState ("")
+    const [username, setUsername] = useState ("");
 
     function handleSubmit (e){
         e.preventDefault()
         const userObj = {user: username}
         holdsUserLogin(userObj)
-    }
+    };
 
     return (
         <div className="login">

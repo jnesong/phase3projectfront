@@ -2,18 +2,22 @@ import React, { useEffect, useState } from "react";
 
 function TodayStatement({ baby, baseURL }) {
 
-    const [lastSlept, setLastSlept] = useState({})
+    const [lastSlept, setLastSlept] = useState({});
 
     useEffect(() => {
         fetch(baseURL + baby.name + "/lastslept")
             .then(r => r.json())
             .then(data => setLastSlept(data))
-        }, [baby, baseURL])
+        }, [baby, baseURL]);
+
+        // let timeSinceLastSlept = instead of the time the baby woke up, 
+        //would like to subtract current time from that time. 
+        let timeSinceLastSlept = lastSlept.woke;
         
 
         return (
 
-            <p>It's been {lastSlept.hours} hours and {lastSlept.minutes} minutes since {baby.name} last slept. </p>
+            <p>It's been {timeSinceLastSlept} since {baby.name} last slept. </p>
 
         )
     }

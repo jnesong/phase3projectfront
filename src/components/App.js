@@ -1,17 +1,18 @@
-import Login from "./Login"
-import Home from "./Home"
-import Days from "./Days"
-import Today from "./Today"
+import Login from "./Login";
+import Home from "./Home";
+import Days from "./Days";
+import Today from "./Today";
 import AddSleep from "./AddSleep";
 import { useHistory, Switch, Route } from "react-router-dom";
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
 
-  const baseURL = "http://localhost:9292/"
+  const baseURL = "http://localhost:9292/";
   const history = useHistory();
 
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({});
+  const [babies, setBabies] = useState([]);
 
   function holdsUserLogin(userObj) {
     let username = userObj.user
@@ -19,9 +20,13 @@ function App() {
       .then(r => r.json())
       .then(data => setUser(data))
     history.push("/today")
-  }
-
+  };
   // console.log(user)
+  useEffect(() => {
+    fetch(baseURL + user.username + "/babies")
+      .then(r => r.json())
+      .then(data => setBabies(data))
+  }, [user]);
 
 
   return (
@@ -35,22 +40,26 @@ function App() {
         </Route>
 
         <Route path="/days">
-          <Days />
+          <Days
+            babies={babies}
+            baseURL={baseURL}
+          />
         </Route>
 
         <Route path="/today">
-          <Today 
-           currentUser = {user}
-           baseURL = {baseURL}
-           />
+          <Today
+            currentUser={user}
+            babies={babies}
+            baseURL={baseURL}
+          />
         </Route>
 
         <Route path="/add">
-          <AddSleep/>
+          <AddSleep />
         </Route>
 
         <Route exact path="/">
-        <Login
+          <Login
             holdsUserLogin={holdsUserLogin}
           />
         </Route>

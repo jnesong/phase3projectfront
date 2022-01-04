@@ -1,19 +1,19 @@
-import NavBar from "./NavBar"
-import stitch from "./gifs/stitch2.gif"
+import NavBar from "./NavBar";
+import stitch from "./gifs/stitch2.gif";
 import React, { useState } from "react";
 
 function AddSleep() {
-    const [page, setPage] = useState("/today")
-    const [nameInput, setNameInput] = useState("")
-    const [dateInput, setDateInput] = useState("")
-    const [timeInput, setTimeInput] = useState("")
-    const [hourInput, setHourInput] = useState("")
-    const [minInput, setMinInput] = useState("")
+    const [page, setPage] = useState("/today");
+    const [nameInput, setNameInput] = useState("");
+    const [dateInput, setDateInput] = useState("");
+    const [timeInput, setTimeInput] = useState("");
+    const [hourInput, setHourInput] = useState("");
+    const [minInput, setMinInput] = useState("");
 
     function handleAddSubmit(e) {
         e.preventDefault()
         console.log(nameInput, dateInput, timeInput, hourInput, minInput)
-    }
+    };
 
     return (
         <div className="home">

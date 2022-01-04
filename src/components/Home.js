@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
 
 function Home() {
-    const [page, setPage] = useState("/today")
+    const [page, setPage] = useState("/today");
 
 
     return (
