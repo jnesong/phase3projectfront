@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card } from 'semantic-ui-react';
+// import { Card } from 'semantic-ui-react';
 
 function History({ baby, baseURL }) {
 
@@ -13,14 +13,12 @@ function History({ baby, baseURL }) {
 
         console.log(sleepHistory);
 
-        // let listSleepHistory = sleepHistory.map((eachSleep) => {
-        // <li>
-        //     {eachSleep.woke}
-        // </li>});
+        let listSleepHistory = sleepHistory.map(sleep => <li key={sleep.id}> {sleep.woke} </li>);
 
         return (
 
             <>
+            {listSleepHistory}
             </>
 
         )
