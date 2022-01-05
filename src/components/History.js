@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Icon } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 function History({ baby, baseURL }) {
 
@@ -34,7 +34,7 @@ function History({ baby, baseURL }) {
             <p>
                 On {sleep.woke} {baby.name} slept for {sleep.hours} hour(s) and {sleep.minutes} minute(s).
             </p>
-            <Button basic color='teal' content='Delete' onClick={handleDeleteClick} />
+            <Button className='delete-button' basic color='teal' content='Delete' onClick={handleDeleteClick} />
         </div>
         )
     })
