@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import dayjs from 'dayjs';
+
 
 function TodayStatement({ baby, baseURL }) {
 
@@ -12,12 +14,13 @@ function TodayStatement({ baby, baseURL }) {
 
         // let timeSinceLastSlept = instead of the time the baby woke up, 
         //would like to subtract current time from that time. 
-        let timeSinceLastSlept = lastSlept.woke;
+        let hrSinceLastSlept = dayjs(lastSlept.woke).get('h');
+        let minSinceLastSlept = dayjs(lastSlept.woke).get('m');
         
 
         return (
 
-            <p>It's been {timeSinceLastSlept} since {baby.name} last slept. </p>
+            <p>{baby.name} last sleep at: {hrSinceLastSlept}:{minSinceLastSlept}</p>
 
         )
     }

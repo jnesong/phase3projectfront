@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import stitch from "./gifs/stitch2.gif";
 import React, { useState } from "react";
+import dayjs from 'dayjs';
 
 function AddSleep({baseURL, babies}) {
     const [page, setPage] = useState("/today");
@@ -9,17 +10,17 @@ function AddSleep({baseURL, babies}) {
     const [timeInput, setTimeInput] = useState("");
     const [hourInput, setHourInput] = useState(0);
     const [minInput, setMinInput] = useState(0);
-    const [babyID, setBabyID] = useState (0)
-
 
     function handleAddSubmit(e) {
         e.preventDefault()
-        matchNameToId(nameInput)
+        let theBaby = babies.find(baby => baby.name === nameInput)
+        let theDate = dayjs(dateInput).format('MMMM D, YYYY ')
+        console.log(theDate)
         let inputObj ={
-            woke: dateInput + " " + timeInput,
+            woke: theDate + timeInput,
             hour: hourInput,
             min: minInput,
-            baby_id: babyID
+            baby_id: theBaby.id
         }
         console.log(inputObj)
 
@@ -28,16 +29,12 @@ function AddSleep({baseURL, babies}) {
             headers:{
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({inputObj}),
+            body: JSON.stringify(inputObj),
         })
         .then(r => r.json())
         .then(console.log);
     };
 
-    function matchNameToId(nameInput){
-        let theBaby = babies.find(baby => baby.name === nameInput)
-        setBabyID(theBaby.id)
-    }
 
     return (
         <div className="home">
